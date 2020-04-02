@@ -1,0 +1,20 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+.naba{
+    background-color: lawngreen;
+    width: 2rem;
+}
+
+.nb{
+    text-decoration: none;
+}
+
+.index{
+    text-decoration: underline;
+}

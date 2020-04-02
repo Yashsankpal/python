@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Blog Project</title>
+    </head>
+<body>
+        <li><a  href="{% url 'post_list' %}">My Tech blog</a></li>
+        <li><a href="{% url 'about'%}">About</a></li>
+  
+      <ul>
+        {% if user.is_authenticated %}
+        <li>
+          <a href="{% url 'post_new' %}" >New Post</a>
+        </li>
+
+        <li>
+          <a href="{% url 'post_draft_list' %}">Drafts</a>
+        </li>
+        <li>
+          <a href="{% url 'logout' %}" >Log out</a>
+        </li>
+
+        <li>
+          <a >Welcome: {{ user.username }}</a>
+        </li>
+          {% else %}
+          <li><a  href="{% url 'login' %}">login</a></li>
+        {% endif %}
+
+      </ul>
+  {% block content %}
+  {% endblock %}
+
+</body>
+</html>
