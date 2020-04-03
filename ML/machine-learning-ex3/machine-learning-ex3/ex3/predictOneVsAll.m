@@ -29,14 +29,13 @@ X = [ones(m, 1) X];
 %       are in rows, then, you can use max(A, [], 2) to obtain the max 
 %       for each row.
 %       
-
-
-
-
-
-
-
 % =========================================================================
-
+for i = 1:m
+  x = repmat(X(i,:),num_labels,1);
+  x = x.*all_theta;
+  a = sum(x,2);
+  [val , index] = max(a);
+  p(i) = index;
+end
 
 end
